@@ -164,7 +164,7 @@ box-shadow:
 
 .hero{
 
-height:100vh;
+min-height:55vh;
 
 display:flex;
 
