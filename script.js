@@ -60,7 +60,7 @@ const x=(e.clientX/window.innerWidth-.5)*20;
 
 const y=(e.clientY/window.innerHeight-.5)*20;
 
-bg.style.transform=translate(${x}px,${y}px) scale(1.05);
+bg.style.transform = translate(${x}px, ${y}px) scale(1.05);
 
 });
 
