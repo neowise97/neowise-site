@@ -33,7 +33,7 @@ const x=e.clientX-rect.left;
 
 const y=e.clientY-rect.top;
 
-card.style.background=
+card.style.background = 
 radial-gradient(circle at ${x}px ${y}px,
 rgba(0,217,255,.18),
 rgba(255,255,255,.05))
