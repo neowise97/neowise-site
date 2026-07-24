@@ -20,6 +20,7 @@ body{
     height: 100%;
     background: url("background1.png") center center / cover no-repeat;
     z-index: -1;
+    background-size: cover;
 }
 
 /* Головний екран */
