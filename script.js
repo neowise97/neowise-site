@@ -89,6 +89,6 @@ if(scale>=1.05)grow=false;
 
 if(scale<=1)grow=true;
 
-logo.style.transform=scale(${scale});
+logo.style.transform = scale(${scale});
 
 },20);
