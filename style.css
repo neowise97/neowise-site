@@ -443,3 +443,10 @@ nav ul.active{
     opacity:1;
     transform:translateY(0);
 }
+.email-text{
+    margin-top:25px;
+    text-align:center;
+    color:#cfcfcf;
+    font-size:16px;
+    letter-spacing:1px;
+}
