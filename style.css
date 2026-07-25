@@ -365,67 +365,89 @@ color:#d7d7d7;
 .background{
     transition:transform .25s linear;
 }
-/* ===== Бургер ===== */
+/* ===== БУРГЕР ===== */
 
 .menu-toggle{
     display:none;
-    flex-direction:column;
-    gap:6px;
+    width:42px;
+    height:42px;
     cursor:pointer;
-    z-index:1001;
+    position:relative;
+    z-index:2000;
 }
 
 .menu-toggle span{
+    position:absolute;
+    left:6px;
     width:30px;
     height:3px;
-    background:white;
+    background:#fff;
     border-radius:20px;
     transition:.35s;
 }
 
-/* ===== Телефон ===== */
+.menu-toggle span:nth-child(1){
+    top:11px;
+}
 
-@media (max-width:768px){
+.menu-toggle span:nth-child(2){
+    top:20px;
+}
+
+.menu-toggle span:nth-child(3){
+    top:29px;
+}
+
+.menu-toggle.active span:nth-child(1){
+    transform:rotate(45deg);
+    top:20px;
+}
+
+.menu-toggle.active span:nth-child(2){
+    opacity:0;
+}
+
+.menu-toggle.active span:nth-child(3){
+    transform:rotate(-45deg);
+    top:20px;
+}
+
+@media(max-width:768px){
 
 nav{
-    padding:18px 20px;
-    height:80px;
+    padding:0 20px;
 }
 
 .menu-toggle{
-    display:flex;
-}
-
-nav ul{
-    position:fixed;
-    top:80px;
-    left:0;
-    width:100%;
-    background:rgba(5,8,22,.97);
-    backdrop-filter:blur(20px);
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:25px;
-
-    padding:35px 0;
-
-    transform:translateY(-150%);
-    transition:.4s;
-}
-
-nav ul.active{
-    transform:translateY(0);
+    display:block;
+    margin-left:auto;
 }
 
 .social{
     display:none;
 }
 
-.logo{
-    font-size:26px;
-    letter-spacing:3px;
+nav ul{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:280px;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:35px;
+
+    background:rgba(5,8,22,.98);
+    backdrop-filter:blur(20px);
+
+    transition:.4s;
+}
+
+nav ul.active{
+    right:0;
 }
 
 }
