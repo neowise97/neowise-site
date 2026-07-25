@@ -267,3 +267,153 @@ footer{
     color:#aaa;
     border-top:1px solid rgba(255,255,255,.08);
 }
+/* ---------- BURGER ---------- */
+
+.menu-toggle{
+    display:none;
+    flex-direction:column;
+    gap:6px;
+    cursor:pointer;
+}
+
+.menu-toggle span{
+    width:30px;
+    height:3px;
+    background:#fff;
+    border-radius:10px;
+    transition:.3s;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width:900px){
+
+nav{
+    padding:18px 25px;
+}
+
+.menu-toggle{
+    display:flex;
+}
+
+nav ul{
+    position:absolute;
+    top:80px;
+    left:0;
+    width:100%;
+    background:rgba(0,0,0,.95);
+    backdrop-filter:blur(20px);
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    gap:25px;
+
+    padding:35px 0;
+
+    transform:translateY(-150%);
+    opacity:0;
+    visibility:hidden;
+
+    transition:.35s;
+}
+
+nav ul.active{
+    transform:translateY(0);
+    opacity:1;
+    visibility:visible;
+}
+
+.social{
+    display:none;
+}
+
+.logo{
+    font-size:28px;
+}
+
+.hero h1{
+    font-size:48px;
+}
+
+.hero p{
+    font-size:20px;
+}
+
+.hero-buttons{
+    flex-direction:column;
+    align-items:center;
+}
+
+.hero-btn{
+    width:100%;
+    max-width:320px;
+}
+
+.section-title{
+    font-size:34px;
+}
+
+.grid{
+    grid-template-columns:1fr;
+}
+
+.card{
+    padding:25px;
+}
+
+.card img{
+    width:150px;
+}
+
+.contacts{
+    flex-direction:column;
+    align-items:center;
+}
+
+.contacts a{
+    width:280px;
+    justify-content:center;
+}
+
+}
+
+/* ---------- SMALL PHONES ---------- */
+
+@media (max-width:480px){
+
+.hero{
+    padding:110px 18px 40px;
+}
+
+.hero h1{
+    font-size:38px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.hero-btn{
+    font-size:16px;
+    padding:15px 22px;
+}
+
+.logo{
+    font-size:24px;
+}
+
+.section-title{
+    font-size:28px;
+}
+
+.card h2{
+    font-size:22px;
+}
+
+.card p{
+    font-size:15px;
+}
+
+}
