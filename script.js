@@ -93,8 +93,9 @@ logo.style.transform = scale(${scale});
 
 },20);
 const menu = document.querySelector(".menu-toggle");
-const nav = document.querySelector("nav ul");
+const navMenu = document.querySelector("nav ul");
 
 menu.addEventListener("click", () => {
-    nav.classList.toggle("active");
+    menu.classList.toggle("active");
+    navMenu.classList.toggle("active");
 });
