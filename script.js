@@ -1,101 +1,111 @@
-// ===== Анімація появи =====
+// ===============================
+// BURGER MENU
+// ===============================
 
-const observer = new IntersectionObserver((entries)=>{
+const menu = document.querySelector(".menu-toggle");
+const nav = document.querySelector("nav ul");
+
+menu.addEventListener("click", () => {
+    nav.classList.toggle("active");
+});
+
+// Закривати меню після натискання
+
+document.querySelectorAll("nav ul a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        nav.classList.remove("active");
+
+    });
+
+});
+
+// ===============================
+// TYPEWRITER
+// ===============================
+
+const text = "Приєднуйся до моєї спільноти";
+
+const typing = document.getElementById("typing-text");
+
+typing.innerHTML = "";
+
+let i = 0;
+
+function typeWriter(){
+
+    if(i < text.length){
+
+        typing.innerHTML += text.charAt(i);
+
+        i++;
+
+        setTimeout(typeWriter,70);
+
+    }
+
+}
+
+window.addEventListener("load",()=>{
+
+    setTimeout(typeWriter,700);
+
+});
+
+// ===============================
+// HERO ANIMATION
+// ===============================
+
+const hero = document.querySelector(".hero-content");
+
+hero.style.opacity = "0";
+hero.style.transform = "translateY(40px)";
+
+window.addEventListener("load",()=>{
+
+    setTimeout(()=>{
+
+        hero.style.transition = "1s";
+
+        hero.style.opacity = "1";
+
+        hero.style.transform = "translateY(0)";
+
+    },300);
+
+});
+
+// ===============================
+// CARD ANIMATION
+// ===============================
+
+const cards = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver(entries=>{
 
 entries.forEach(entry=>{
 
 if(entry.isIntersecting){
 
-entry.target.classList.add("show");
+entry.target.style.opacity="1";
+
+entry.target.style.transform="translateY(0)";
 
 }
 
 });
 
-},{threshold:.15});
+},{threshold:.2});
 
-document.querySelectorAll(".card,.hero").forEach(el=>{
+cards.forEach(card=>{
 
-observer.observe(el);
+card.style.opacity="0";
 
-});
+card.style.transform="translateY(40px)";
 
+card.style.transition=".7s";
 
-// ===== Світіння карток =====
+observer.observe(card);
 
-document.querySelectorAll(".card").forEach(card=>{
-
-card.addEventListener("mousemove",(e)=>{
-
-const rect=card.getBoundingClientRect();
-
-const x=e.clientX-rect.left;
-
-const y=e.clientY-rect.top;
-
-card.style.background = 
-radial-gradient(circle at ${x}px ${y}px,
-rgba(0,217,255,.18),
-rgba(255,255,255,.05))
-;
-
-});
-
-card.addEventListener("mouseleave",()=>{
-
-card.style.background="rgba(255,255,255,.06)";
-
-});
-
-});
-
-
-// ===== Паралакс фону =====
-
-document.addEventListener("mousemove",(e)=>{
-
-const bg=document.querySelector(".background");
-
-const x=(e.clientX/window.innerWidth-.5)*20;
-
-const y=(e.clientY/window.innerHeight-.5)*20;
-
-bg.style.transform = translate(${x}px, ${y}px) scale(1.05);
-
-});
-
-
-// ===== Плавне збільшення логотипа =====
-
-const logo=document.querySelector(".logo");
-
-let grow=true;
-
-let scale=1;
-
-setInterval(()=>{
-
-if(grow){
-
-scale+=0.0015;
-
-}else{
-
-scale-=0.0015;
-
-}
-
-if(scale>=1.05)grow=false;
-
-if(scale<=1)grow=true;
-
-logo.style.transform = scale(${scale});
-
-},20);
-const menu = document.querySelector(".menu-toggle");
-const navMenu = document.querySelector("nav ul");
-
-menu.addEventListener("click", () => {
-    menu.classList.toggle("active");
-    navMenu.classList.toggle("active");
 });
