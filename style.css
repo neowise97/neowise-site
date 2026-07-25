@@ -428,3 +428,13 @@ nav ul.active{
 }
 
 }
+.hidden-card{
+    opacity:0;
+    transform:translateY(40px);
+    transition:opacity .7s ease, transform .7s ease;
+}
+
+.show-card{
+    opacity:1;
+    transform:translateY(0);
+}
