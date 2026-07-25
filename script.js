@@ -84,30 +84,24 @@ window.addEventListener("load",()=>{
 
 const cards = document.querySelectorAll(".card");
 
-const observer = new IntersectionObserver(entries=>{
+const observer = new IntersectionObserver(entries => {
 
-entries.forEach(entry=>{
+    entries.forEach(entry => {
 
-if(entry.isIntersecting){
+        if (entry.isIntersecting) {
 
-entry.target.style.opacity="1";
+            entry.target.classList.add("show-card");
 
-entry.target.style.transform="translateY(0)";
+        }
 
-}
+    });
 
-});
+}, { threshold: 0.2 });
 
-},{threshold:.2});
+cards.forEach(card => {
 
-cards.forEach(card=>{
+    card.classList.add("hidden-card");
 
-card.style.opacity="0";
-
-card.style.transform="translateY(40px)";
-
-card.style.transition=".7s";
-
-observer.observe(card);
+    observer.observe(card);
 
 });
