@@ -226,12 +226,12 @@ nav ul li a:hover{
     max-width:100%;
     height:auto;
     margin-bottom:20px;
-
-    transition:transform .5s ease;
+    object-fit:contain;
+    transition:transform .45s ease;
 }
 
 .card:hover img{
-    transform:translateY(-8px) scale(1.06);
+    transform:scale(1.12) rotate(-3deg);
 }
 .card h2{
     margin-bottom:10px;
