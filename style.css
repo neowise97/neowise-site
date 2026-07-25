@@ -122,7 +122,21 @@ nav ul li a:hover{
     color:#7df9ff;
     text-shadow:0 0 25px cyan;
 }
+.hero-title{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+}
 
+.hero-title img{
+    height:65px;
+    width:auto;
+}
+
+.hero-title span{
+    display:inline-block;
+}
 .hero p{
     margin-top:20px;
     font-size:24px;
