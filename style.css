@@ -205,11 +205,22 @@ nav ul li a:hover{
     transition:.35s;
 }
 
-.card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 0 30px rgba(0,255,255,.18);
+.card{
+    transition: transform .45s ease, box-shadow .45s ease;
+    transform-style: preserve-3d;
 }
 
+.card:hover{
+    transform: perspective(1000px)
+               rotateX(6deg)
+               rotateY(-6deg)
+               translateY(-12px)
+               scale(1.03);
+
+    box-shadow:
+        0 20px 45px rgba(0,255,255,.25),
+        0 0 25px rgba(0,255,255,.18);
+}
 .card img{
     width:180px;
     max-width:100%;
