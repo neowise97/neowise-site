@@ -484,6 +484,6 @@ nav ul.active{
 @media (max-width:480px){
     .btc,
     .trc{
-        font-size:12px;
+        font-size:10px;
     }
 }
