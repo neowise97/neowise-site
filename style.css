@@ -487,3 +487,63 @@ nav ul.active{
         font-size:10px;
     }
 }
+.donate-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    margin-top:40px;
+}
+
+.copy-line{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+}
+
+.copy-line p{
+    margin:0;
+    text-align:left;
+    flex:1;
+}
+
+.wallet{
+    font-size:13px;
+    word-break:break-all;
+}
+
+.copy-btn{
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:12px;
+    background:#7df9ff;
+    color:#000;
+    font-size:20px;
+    cursor:pointer;
+    transition:.3s;
+    flex-shrink:0;
+}
+
+.copy-btn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 20px #7df9ff;
+}
+
+@media (max-width:480px){
+
+.copy-line{
+    gap:10px;
+}
+
+.wallet{
+    font-size:11px;
+}
+
+.copy-btn{
+    width:36px;
+    height:36px;
+    font-size:17px;
+}
+
+}
