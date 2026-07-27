@@ -105,3 +105,18 @@ cards.forEach(card => {
     observer.observe(card);
 
 });
+function copyText(id) {
+    const text = document.getElementById(id).innerText;
+
+    navigator.clipboard.writeText(text).then(() => {
+
+        const btn = event.target;
+
+        btn.innerHTML = "✅";
+
+        setTimeout(() => {
+            btn.innerHTML = "📋";
+        }, 1200);
+
+    });
+}
