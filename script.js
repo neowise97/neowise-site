@@ -106,17 +106,9 @@ cards.forEach(card => {
 
 });
 function copyText(id) {
-    const text = document.getElementById(id).innerText;
+    const text = document.getElementById(id).textContent.trim();
 
     navigator.clipboard.writeText(text).then(() => {
-
-        const btn = event.target;
-
-        btn.innerHTML = "✅";
-
-        setTimeout(() => {
-            btn.innerHTML = "📋";
-        }, 1200);
-
+        alert("✅ Скопійовано: " + text);
     });
 }
